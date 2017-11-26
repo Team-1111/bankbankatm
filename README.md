@@ -25,3 +25,6 @@ Under indroduction we will explain the following areas.
 ## 1.1 Purpose
 This document mainly decribes the software requriements and functionality of the ATM machine. And we will build the software system for ATM. It is intended for the designer developer and maintainer of the ATM. Also if any bank which dont have ATM services we might be able to sell the software or work for them to build a ATM system. 
 
+![](giphy.gif)
+Example of how customers use this system
+![](giphys.gif)
