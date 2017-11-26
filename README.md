@@ -15,7 +15,7 @@ Cant we draw UML Diagram using Visual_Paradigm?
 
 This is our final group project of Object Oriented Programming and Analysis subject. Our project is to build a bank ATM software system. In this document we will try to explain the requirements and functionality of the ATM system. In another word, we will analyse the system and try to make you to understand how we build the system and how it works for banks. It is obvious that ATM is part of bank so we will show the whole picture of Banking system but we will only focus on ATM system. Ofcause bank can operate without ATM but ATM is positive impact on bank and their income. Also, ATM will make easy for customers to make money transections. 
 
-## Introduction
+# 1. Introduction
 Under indroduction we will explain the following areas. 
 - Main Purpose of the project.
 - Scope of the project
@@ -49,3 +49,11 @@ The remainder of this document is organized as follows. There will be some defin
 - Customer: The holder of one or more accounts in a bank. A customer can consist of one or more persons or corporations, the correspondence is not relevant to this problem. The same person holding an account at a different bank is considered a different customer
 
 - Transaction : (TB) can be defined as the set of instruments and services that a bank offers to trading partners to financially support their reciprocal exchanges of goods (e.g.trade), monetary flows (e.g., cash), or commercial papers (e.g., exchanges)
+
+# 2. General Description
+
+## 2.1 Product Perspective
+The ATM network doesn't work independentlyIt has to work together with the computers software owned by banks. There are clearly defined interfaces for the different systems
+
+## 2.2 Product Functions
+The software should support a computerized banking network Each bank provides its own computer to maintain its own accounts and process transactions against them. Automatic teller machines communicate with the banks, computers. An automatic teller machine accepts a cash cards interacts with the users communicates with the bank computer to carry out the transactions dispenses cash and prints receipts. The system requires appropriate record keeping and security provisions. The system must handle concurrent access to the same account correctly. The banks will provide their own software for their own computers. The cost of the shared system will be apportioned to the banks according go the number of customers with cash cards.
