@@ -57,3 +57,61 @@ The ATM network doesn't work independentlyIt has to work together with the compu
 
 ## 2.2 Product Functions
 The software should support a computerized banking network Each bank provides its own computer to maintain its own accounts and process transactions against them. Automatic teller machines communicate with the banks, computers. An automatic teller machine accepts a cash cards interacts with the users communicates with the bank computer to carry out the transactions dispenses cash and prints receipts. The system requires appropriate record keeping and security provisions. The system must handle concurrent access to the same account correctly. The banks will provide their own software for their own computers. The cost of the shared system will be apportioned to the banks according go the number of customers with cash cards.
+
+## 2.3 User Characteristics
+- Customer
+The customer interacts with the ATM network via the ATM. It must be very easy for
+them to use the ATM. They should be supported by the system in every possible way.
+
+- Maintainer(IT Technician from Bank)
+It should be easy to maintain the whole system. The maintainer should be the only
+person that is allowed to connect a new ATM to the network.
+
+# 3. Specic Requirements
+
+## 3.1 Functional Requirements
+The functional requirements are organized in two sections
+- First requirements of the ATM
+- Second requirements of the bank
+## 3.1.1 Requirements of the ATM
+The requirements for the ATM are organized in the following way: General requirements, requirements for authorization, requirements for a transaction.
+
+## General
+## Functional requirement 1
+- Description
+Initialize parameters t,k,m,n.  (t = Total fund in the ATM at start of day, k = Maximum withdrawal per day and account, m = mMximum withdrawal per transaction, n = Minimum cash in the ATM to permit a transaction)
+
+- Input
+ATM is initialized with t dollars k,m,n are entered.
+
+- Processing
+Storing the parameters.
+
+- Output
+Parameters are set.
+
+## Functional requirement 2
+- Description
+If no cash card is in the ATM, the system should display initial display.
+
+## Functional requirement 3
+- Description
+If ATM is running out of money, no card should be accepted. An error message is displayed.
+
+- Input
+A card is entered.
+
+- Processing
+The amount of cash is less than total fund in the ATM at start of day.
+
+- Output
+Display an error message Return cash card.
+
+## Authorization
+The authorization starts after a customer has entered his card in the ATM
+
+
+
+
+
+
