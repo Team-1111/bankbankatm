@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.yosir</groupId>
+		<artifactId>atm-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>com.yosir</groupId>
+	<artifactId>atm-manager</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<!-- managing the dependencies -->
+	<dependencies>
+		<dependency>
+			<groupId>com.yosir</groupId>
+			<artifactId>yosir-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<modules>
+		<module>atm-manager-pojo</module>
+		<module>atm-manager-mapper</module>
+		<module>atm-manager-service</module>
+		<module>atm-manager-web</module>
+	</modules>
+
+	<build>
+	
+	<!-- configuring plugins -->
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<configuration>
+				<port>8080</port>
+				<path>/</path>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
