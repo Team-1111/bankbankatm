@@ -414,3 +414,5 @@ If the amount exceeds the limit, the transaction will fail.
 ## Functional requirement 10
 The bank only provides security for their own computer and their own software.
 
+<img src="./ATM.PNG" alt="ATMInterface" title="ATM Interface"/>
+
