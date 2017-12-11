@@ -286,3 +286,10 @@ ATM displays error message, Dialog :
 - Output : 
 Eject card.
 
+## 3.1.2 Requirements of the bank computer for the ATM
+
+### Authorization 
+The bank computer gets a request from the ATM to verify an account.
+ 
+ ## Functional requirement 1
+
