@@ -121,6 +121,8 @@ The authorization starts after a customer has entered his card in the ATM
 
 ##4.2 Defining the context 
 
+
+
 ![context diagram](./UML/atmsystemcontext.jpg)
 
 For this system, User and Maintainer are dependent on the ATM for its services as they use its navigation information, operate it, and maintain it, respectively. On the other hand,  the power services of the ATM will be provided by an external system, the External Power actor. Meanwhile, the information of accounts of users are provided by bank system. So, the ATM system should communicate with it.
