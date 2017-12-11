@@ -414,5 +414,70 @@ If the amount exceeds the limit, the transaction will fail.
 ## Functional requirement 10
 The bank only provides security for their own computer and their own software.
 
+## 3.2 External Interface Requirement
+### 3.2.1 User Interfaces
+
+The interface of the ATM must fulfill ergonomic requirements. The following is just an example for a possible interface to the ATM
+
 <img src="./ATM.PNG" alt="ATMInterface" title="ATM Interface"/>
+
+### 3.2.2 Hardware Interfaces
+The ATM network has to provide hardware interfaces to: 
+- various printers
+- various ATM machines : <br>
+There are several companies producing the ATM machines.
+- several types of networks The exact specifcation of the hardware interfaces is not part of this document
+
+### 3.2.3 Software Interfaces
+The ATM network has to provide software interfaces to: 
+- the software used by different banks
+- different network softwar <br>
+The exact, detailed specifcation of the software interfaces is not part of this document.
+
+### 3.2.4 Communication Interfaces
+There is no restriction of the ATM network to a specific network protocol as long as the performance requirements are satisfied.
+
+## 3.3 Performance Requirements
+### Performance requirement 1
+- Description <br>
+Error message should be displayed at least 30 sec.
+
+### Performance requirement 2
+- Description <br>
+If there is no response from the bank computer after a request within 2 minutes the card is rejected with an error message
+
+### Performance requirement 3
+- Description <br>
+The ATM dispenses money if and only if the withdrawal from the account is processed and accepted by the bank.
+
+### Performance requirement 4
+- Description <br>
+Each bank may be processing transactions from several ATMs at the same time.
+
+## 3.4 Attributes
+### 3.4.1 Availability
+The ATM network has to be available 24 hours a day.
+
+### 3.4.2 Security
+The ATM network should provide maximal security. In order to make that much more transparent there are the following requirements <br>
++ It must be impossible to plug into the network
+
+### 3.4.3 Maintainability
+Only maintainers are allowed to connect new ATM's to the network. (Maintainer)
+
+### 3.4.4 Transferability/Conversions
+Not Applicable for now
+
+## 3.5 Other Requirements
+### 3.5.1 Data Base
+The ATM must be able to use several data formats according to the data formats that are provided by the data bases of different banks. A transaction should have all the properties of a data base transaction (Atomicity, Consistency, Isolation, Durability).
+
+
+
+
+
+
+
+
+
 
