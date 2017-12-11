@@ -291,5 +291,126 @@ Eject card.
 ### Authorization 
 The bank computer gets a request from the ATM to verify an account.
  
- ## Functional requirement 1
+## Functional requirement 1
+- Description : <br>
+The bank computer checks if the the bank code is valid. A bank code is valid if the cash card was issued by the bank.
+
+- Input :
+Request from the ATM to verify card Serial number and password.
+
+- Processing :
+Check if the cash card was issued by the bank.
+
+- Output : 
+Valid or invalid bank code.
+
+## Functional requirement 2
+- Description : <br>
+If it is not a valid bank code, the bank computer will send a message to the ATM.
+
+- Input :
+Invalid bank code
+
+- Processing :
+Process message
+
+- Output : 
+The bank computer sends the message "bad bank code" to the ATM.
+
+## Functional requirement 3
+- Description : <br>
+The bank computer checks if the the password is valid for a valid cash card.
+
+- Input :
+Request from the ATM to verify password
+
+- Processing :
+Check password of the customer.
+
+- Output : 
+Valid or invalid password
+
+## Functional requirement 4
+- Description : <br>
+If it is not a valid password, the bank computer will send a message to the ATM
+
+- Input :
+Invalid password
+
+- Processing :
+Process message, Update count for in valid password for the account.
+
+- Output : 
+The bank computer sends the message "bad password" to the ATM.
+
+## Functional requirement 5
+- Description : <br>
+If it is a valid cash card and a valid password but there are problems with the account, the bank will send a message to the ATM that there are problems
+
+- Input :
+Valid cash card and password
+
+- Processing :
+Process message
+
+- Output : 
+The bank sends "bad account" to the ATM.
+
+## Functional requirement 6
+- Description : <br>
+If it is a valid cash card, a valid password and there are no problems with the account the bank computer will send a message to the ATM that everything is ok
+
+- Input :
+Valid cash card, password and account
+
+- Processing :
+Process message
+
+- Output : 
+Send "account ok" to the ATM.
+
+### Transaction
+The bank computer gets a request to process a transaction from the ATM.
+
+## Functional requirement 7
+- Description : <br>
+After a request the bank computer processes the transaction.
+
+- Input :
+Request to process a transaction on an account and amount m to withdraw.
+
+- Processing :
+Process transaction ( together with the software of the bank). Update k for amount (k = Maximum withdrawal per day and account)
+
+- Output : 
+If transaction succeeded, the bank computer sends the message "transaction succeeded" to the ATM. If not, it will send "transaction failed".
+
+## Functional requirement 8
+- Description : <br>
+Update account after money is dispensed
+
+- Input :
+Response from ATM about money dispensed.
+
+- Processing :
+Updates account
+
+- Output : 
+New account record
+
+## Functional requirement 9
+- Description : <br>
+Each bank has a limit k for each account about the amount of money that is a vailable via cash card each day/monthly
+
+- Input :
+Request to process transaction.
+
+- Processing :
+Check if the amount of money doesn't exceed k (k = Maximum withdrawal per day and account)
+
+- Output : 
+If the amount exceeds the limit, the transaction will fail.
+
+## Functional requirement 10
+The bank only provides security for their own computer and their own software.
 
