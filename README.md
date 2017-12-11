@@ -60,12 +60,12 @@ The software should support a computerized banking network Each bank provides it
 
 ## 2.3 User Characteristics
 - Customer
-The customer interacts with the ATM network via the ATM. It must be very easy for
-them to use the ATM. They should be supported by the system in every possible way.
+  The customer interacts with the ATM network via the ATM. It must be very easy for
+  them to use the ATM. They should be supported by the system in every possible way.
 
 - Maintainer(IT Technician from Bank)
-It should be easy to maintain the whole system. The maintainer should be the only
-person that is allowed to connect a new ATM to the network.
+  It should be easy to maintain the whole system. The maintainer should be the only
+  person that is allowed to connect a new ATM to the network.
 
 # 3. Specic Requirements
 
@@ -79,39 +79,64 @@ The requirements for the ATM are organized in the following way: General require
 ## General
 ## Functional requirement 1
 - Description
-Initialize parameters t,k,m,n.  (t = Total fund in the ATM at start of day, k = Maximum withdrawal per day and account, m = mMximum withdrawal per transaction, n = Minimum cash in the ATM to permit a transaction)
+  Initialize parameters t,k,m,n.  (t = Total fund in the ATM at start of day, k = Maximum withdrawal per day and account, m = mMximum withdrawal per transaction, n = Minimum cash in the ATM to permit a transaction)
 
 - Input
-ATM is initialized with t dollars k,m,n are entered.
+  ATM is initialized with t dollars k,m,n are entered.
 
 - Processing
-Storing the parameters.
+  Storing the parameters.
 
 - Output
-Parameters are set.
+  Parameters are set.
 
 ## Functional requirement 2
 - Description
-If no cash card is in the ATM, the system should display initial display.
+  If no cash card is in the ATM, the system should display initial display.
 
 ## Functional requirement 3
 - Description
-If ATM is running out of money, no card should be accepted. An error message is displayed.
+  If ATM is running out of money, no card should be accepted. An error message is displayed.
 
 - Input
-A card is entered.
+  A card is entered.
 
 - Processing
-The amount of cash is less than total fund in the ATM at start of day.
+  The amount of cash is less than total fund in the ATM at start of day.
 
 - Output
-Display an error message Return cash card.
+  Display an error message Return cash card.
 
 ## Authorization
 The authorization starts after a customer has entered his card in the ATM
 
+# 4.Defining the Boundaries of the Problem
+
+## 4.1 The hardware on which our software must execute
+
+- The processor (like CPU)  in the ATM device.
+- Time and date are supplied by a clock.
+- User input is provided through a keypad.
+- The screen of the ATM will show user the interface
+
+##4.2 Defining the context 
+
+![context diagram](./UML/atmsystemcontext.jpg)
+
+For this system, User and Maintainer are dependent on the ATM for its services as they use its navigation information, operate it, and maintain it, respectively. On the other hand,  the power services of the ATM will be provided by an external system, the External Power actor. Meanwhile, the information of accounts of users are provided by bank system. So, the ATM system should communicate with it.
+
+## 4.3 Scenarios
 
 
 
+Now, let's walk through several scenarios of doing some operates on the ATM.
 
-
+1. First, a user should insert a cash card into the ATM. After it, the user should finish each step with 60 seconds. otherwise, the ATM will swallow the card.
+2. Second, the system will show a interface that let the user to enter the password. And there are three options: correction, confirm, Take the card. If the user find that he entered wrong password, then he can choose the correction option, and he can enter the password again. Then, he(she) should choose the confirm option, and the ATM system will communicate with the bank system as well as check whether the password entered is right. if it's not correct, it will show the wrong information and user should enter password again. However, if the user can just entered the wrong password three times, the card will be frozen. 
+3. After the user entered the right password, the interface will show some options(such changing password, Transfer money, Inquiry, withdrawal, deposit, take the card).
+4. If the user choose the option of changing password, then the system will ask the user to enter the original password. after the user entered the correct password, then the user can enter the new password to change the old password.
+5. If the user choose the option of Transfer money, then the system will first show some prompts. And after the user confirmed, then he(she) can enter the account that he(she) want to transfer money to. At last, he(she) should enter the amount of money he(she) want to transfer and confirm.
+6. If the user choose the option of Inquiry, then the system will show two options, the first one is detailed inquiry, the second one is balance inquiry. If the user choose the first one, then it will show the recent ten transactions details. If the user choose the second one, it will show balance of the account and the balance that can be used.
+7. If the user choose the option of withdrawal, it will show a interface that let the user to enter the amount of money he(she) want to withdraw. and after the user entered the number and confirmed, the  ATM will send the money to the user. However, if the amount entered by the user exceeds the balance in the card, then it show a message to tell the user. And then the user should enter a appropriate amount and confirm. At last, the system will show a show a successful transaction message(includes the amount of the transaction and the fee).
+8. If the user choose the option of deposit, then it open the cover, and show a message to let the user to put the money into the ATM. If there are no faults, then it will show some successful information to the user.
+9. If the user choose the option of take the card, then he can retrieve his(her) card and end the transaction.
