@@ -110,8 +110,58 @@ Display an error message Return cash card.
 ## Authorization
 The authorization starts after a customer has entered his card in the ATM
 
+## Functional requirement 4
+- Description
+The ATM has to check if the entered card is a valid cash-card.
 
+- Input
+Customer enters the cash card.
 
+- Processing
+Check if it is a valid cash card. It will be valid if
+1) the information on the card can be read.
+2) it is not expired.
 
+- Output
+Display error message and return cash card if it is invalid.
 
+## Functional requirement 5
+- Description
+If the cash card is valid, the ATM should read the serial number and bank code.
+
+- Input
+Valid cash card.
+
+- Processing
+Read the serial number.
+
+- Output
+Initiate authorization dialog.
+
+## Functional requirement 6
+- Description
+The serial number should be logged.
+
+- Input
+Serial number from cash card
+
+- Processing
+Log the number
+
+- Output
+Update to log file.
+
+## Functional requirement 7
+- Description
+Authorization dialog : 
+The user is requested to enter his password. The ATM verifies the bank code and password with the bank computer
+
+- Input
+Password from user, bank code from cash card.
+
+- Processing
+Send serial number and password to bank computer, receive response from bank.
+
+- Output
+Accept or reject authorization from bank.
 
