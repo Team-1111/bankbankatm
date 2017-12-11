@@ -59,11 +59,11 @@ The ATM network doesn't work independentlyIt has to work together with the compu
 The software should support a computerized banking network Each bank provides its own computer to maintain its own accounts and process transactions against them. Automatic teller machines communicate with the banks, computers. An automatic teller machine accepts a cash cards interacts with the users communicates with the bank computer to carry out the transactions dispenses cash and prints receipts. The system requires appropriate record keeping and security provisions. The system must handle concurrent access to the same account correctly. The banks will provide their own software for their own computers. The cost of the shared system will be apportioned to the banks according go the number of customers with cash cards.
 
 ## 2.3 User Characteristics
-- Customer
+- Customer :
 The customer interacts with the ATM network via the ATM. It must be very easy for
 them to use the ATM. They should be supported by the system in every possible way.
 
-- Maintainer(IT Technician from Bank)
+- Maintainer(IT Technician from Bank) :
 It should be easy to maintain the whole system. The maintainer should be the only
 person that is allowed to connect a new ATM to the network.
 
@@ -78,90 +78,90 @@ The requirements for the ATM are organized in the following way: General require
 
 ## General
 ## Functional requirement 1
-- Description
+- Description :
 Initialize parameters t,k,m,n.  (t = Total fund in the ATM at start of day, k = Maximum withdrawal per day and account, m = mMximum withdrawal per transaction, n = Minimum cash in the ATM to permit a transaction)
 
-- Input
+- Input :
 ATM is initialized with t dollars k,m,n are entered.
 
-- Processing
+- Processing :
 Storing the parameters.
 
-- Output
+- Output :
 Parameters are set.
 
 ## Functional requirement 2
-- Description
+- Description :
 If no cash card is in the ATM, the system should display initial display.
 
 ## Functional requirement 3
-- Description
+- Description :
 If ATM is running out of money, no card should be accepted. An error message is displayed.
 
-- Input
+- Input :
 A card is entered.
 
-- Processing
+- Processing :
 The amount of cash is less than total fund in the ATM at start of day.
 
-- Output
+- Output :
 Display an error message Return cash card.
 
 ## Authorization
 The authorization starts after a customer has entered his card in the ATM
 
 ## Functional requirement 4
-- Description
+- Description :
 The ATM has to check if the entered card is a valid cash-card.
 
-- Input
+- Input :
 Customer enters the cash card.
 
-- Processing
+- Processing :
 Check if it is a valid cash card. It will be valid if
 1) the information on the card can be read.
 2) it is not expired.
 
-- Output
+- Output :
 Display error message and return cash card if it is invalid.
 
 ## Functional requirement 5
-- Description
+- Description :
 If the cash card is valid, the ATM should read the serial number and bank code.
 
-- Input
+- Input :
 Valid cash card.
 
-- Processing
+- Processing :
 Read the serial number.
 
-- Output
+- Output :
 Initiate authorization dialog.
 
 ## Functional requirement 6
-- Description
+- Description :
 The serial number should be logged.
 
-- Input
+- Input :
 Serial number from cash card
 
-- Processing
+- Processing :
 Log the number
 
-- Output
+- Output :
 Update to log file.
 
 ## Functional requirement 7
-- Description
+- Description :
 Authorization dialog : 
 The user is requested to enter his password. The ATM verifies the bank code and password with the bank computer
 
-- Input
+- Input :
 Password from user, bank code from cash card.
 
-- Processing
+- Processing: 
 Send serial number and password to bank computer, receive response from bank.
 
-- Output
+- Output: 
 Accept or reject authorization from bank.
 
