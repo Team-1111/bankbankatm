@@ -119,9 +119,7 @@ The authorization starts after a customer has entered his card in the ATM
 - User input is provided through a keypad.
 - The screen of the ATM will show user the interface
 
-##4.2 Defining the context 
-
-
+## 4.2 Defining the context 
 
 ![context diagram](./UML/atmsystemcontext.jpg)
 
