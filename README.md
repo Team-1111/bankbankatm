@@ -165,3 +165,18 @@ Send serial number and password to bank computer, receive response from bank.
 - Output: 
 Accept or reject authorization from bank.
 
+## Functional requirement 8
+- Description :
+Different negative answers from bank computer for authorization dialog.
+
+- Input :
+Response from bank or authorization dialog : <br>
+
+   + "bad password" if the password was wrong,
+   + "bad bank code" if the cash card of the bank is not supported by the ATM,
+   + "bad account" if there are problems with the account.
+
+- Processing :If the ATM gets any of these messages from the bank computer, the card will be ejected and the user will get the relevant error message.
+
+- Output :
+Card is ejected and error message is displayed.
