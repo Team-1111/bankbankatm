@@ -79,7 +79,7 @@ The requirements for the ATM are organized in the following way: General require
 ## General
 ## Functional requirement 1
 - Description :
-Initialize parameters t,k,m,n.  (t = Total fund in the ATM at start of day, k = Maximum withdrawal per day and account, m = mMximum withdrawal per transaction, n = Minimum cash in the ATM to permit a transaction)
+Initialize parameters t,k,m,n.  (t = Total fund in the ATM at start of day, k = Maximum withdrawal per day and account, m = Maximum withdrawal per transaction, n = Minimum cash in the ATM to permit a transaction)
 
 - Input :
 ATM is initialized with t dollars k,m,n are entered.
@@ -180,3 +180,109 @@ Response from bank or authorization dialog : <br>
 
 - Output :
 Card is ejected and error message is displayed.
+
+## Functional requirement 9
+- Description :
+If password and serial number are ok, the authorization process is finished
+
+- Input :
+The ATM gets accept from the bank computer from authorization process
+
+- Processing :
+Finishing authorization
+
+- Output :
+Start transaction dialog
+
+## Functional requirement 10
+- Description :
+If a card was entered more than three times in a row at any ATM and the password was wrong each time, the card is kept by the ATM. A message will be displayed that the customer should call the bank.
+
+- Input :
+Entering a wrong password for the fourth time in succession
+
+- Processing :
+Initiate authorization process. Response from bank computer is to keep the card
+
+- Output : Display error message that the customer should call the bank.
+
+## Functions
+These are the requirements for the different functions the ATM should provide after authorization.
+
+## Functional requirement 11
+- Description :
+The kind of transactions the ATM offers is: withdrawal
+
+- Input :
+Authorization successfully completed. Enter the amount to withdraw.
+
+- Processing :
+Amount entered is compared with m ( m = Maximum withdrawal per transaction)
+
+- Output : Amount of money to be dispensed is displayed. Begin initial withdrawal sequence.
+
+## Functional requirement 12
+- Description : <br>
+Initial withdrawal sequence : If it is too much withdrawal redo the transaction.
+
+- Input :
+Customer has entered the amount of money
+
+- Processing :
+Error if the amount is greater than m (m = Maximum withdrawal per transaction)
+
+- Output : Start transaction or re-initiate transaction dialog if the amount is not within the pre-defined transaction policy.
+
+## Functional requirement 13
+- Description : <br>
+Perform transaction
+
+- Input :
+Initial withdrawal sequence successful
+
+- Processing :
+Send request to the bank computer.
+
+- Output : Wait for response from the bank computer.
+
+## Functional requirement 14
+- Description : <br>
+If the transaction is successful, the money is dispensed.
+
+- Input :
+ATM gets message "transaction succeeded" from the bank computer.
+
+- Processing :
+ATM prints receipt, updates Total fund in the ATM at start of day and ejects the card. Dialog
+Customer should take the card.
+
+- Output : After the Customer has taken the card the money is dispensed.
+
+## Functional requirement 15
+- Description : <br>
+If the money is dispensed, the amount is logged
+
+- Input :
+The number of 20 yuan bills requested is dispensed to the customer.
+
+- Processing :
+Log the amount of money against the serial number of the card.
+
+- Output : 
+Amount logged together with the serial number. Response sent to bank for money dispensed.
+
+## Functional requirement 16
+- Description : <br>
+If the transaction is not successful, an error message should be displayed. The card should be ejected.
+
+- Input :
+ATM gets message "transaction not successful" from the bank computer.
+
+
+- Processing : <br>
+ATM displays error message, Dialog : 
+"Customer should take the card"
+
+- Output : 
+Eject card.
+
