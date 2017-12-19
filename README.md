@@ -66,14 +66,43 @@ The software should support a computerized banking network Each bank provides it
 - Maintainer(IT Technician from Bank)
   It should be easy to maintain the whole system. The maintainer should be the only
   person that is allowed to connect a new ATM to the network.
+  
+# 3.Defining the Boundaries of the Problem
 
-# 3. Specic Requirements
+## 3.1 The hardware on which our software must execute
 
-## 3.1 Functional Requirements
+- The processor (like CPU)  in the ATM device.
+- Time and date are supplied by a clock.
+- User input is provided through a keypad.
+- The screen of the ATM will show user the interface
+
+## 3.2 Defining the context 
+
+![context diagram](./UML/atmsystemcontext.jpg)
+
+For this system, User and Maintainer are dependent on the ATM for its services as they use its navigation information, operate it, and maintain it, respectively. On the other hand,  the power services of the ATM will be provided by an external system, the External Power actor. Meanwhile, the information of accounts of users are provided by bank system. So, the ATM system should communicate with it.
+
+## 3.3 Scenarios
+
+Now, let's walk through several scenarios of doing some operates on the ATM.
+
+1. First, a user should insert a cash card into the ATM. After it, the user should finish each step with 60 seconds. otherwise, the ATM will swallow the card.
+2. Second, the system will show a interface that let the user to enter the password. And there are three options: correction, confirm, Take the card. If the user find that he entered wrong password, then he can choose the correction option, and he can enter the password again. Then, he(she) should choose the confirm option, and the ATM system will communicate with the bank system as well as check whether the password entered is right. if it's not correct, it will show the wrong information and user should enter password again. However, if the user can just entered the wrong password three times, the card will be frozen. 
+3. After the user entered the right password, the interface will show some options(such changing password, Transfer money, Inquiry, withdrawal, deposit, take the card).
+4. If the user choose the option of changing password, then the system will ask the user to enter the original password. after the user entered the correct password, then the user can enter the new password to change the old password.
+5. If the user choose the option of Transfer money, then the system will first show some prompts. And after the user confirmed, then he(she) can enter the account that he(she) want to transfer money to. At last, he(she) should enter the amount of money he(she) want to transfer and confirm.
+6. If the user choose the option of Inquiry, then the system will show two options, the first one is detailed inquiry, the second one is balance inquiry. If the user choose the first one, then it will show the recent ten transactions details. If the user choose the second one, it will show balance of the account and the balance that can be used.
+7. If the user choose the option of withdrawal, it will show a interface that let the user to enter the amount of money he(she) want to withdraw. and after the user entered the number and confirmed, the  ATM will send the money to the user. However, if the amount entered by the user exceeds the balance in the card, then it show a message to tell the user. And then the user should enter a appropriate amount and confirm. At last, the system will show a show a successful transaction message(includes the amount of the transaction and the fee).
+8. If the user choose the option of deposit, then it open the cover, and show a message to let the user to put the money into the ATM. If there are no faults, then it will show some successful information to the user.
+9. If the user choose the option of take the card, then he can retrieve his(her) card and end the transaction.
+
+# 4. Specic Requirements
+
+## 4.1 Functional Requirements
 The functional requirements are organized in two sections
 - First requirements of the ATM
 - Second requirements of the bank
-## 3.1.1 Requirements of the ATM
+## 4.1.1 Requirements of the ATM
 The requirements for the ATM are organized in the following way: General requirements, requirements for authorization, requirements for a transaction.
 
 ## General
@@ -110,37 +139,6 @@ The requirements for the ATM are organized in the following way: General require
 
 ## Authorization
 The authorization starts after a customer has entered his card in the ATM
-
-# 4.Defining the Boundaries of the Problem
-
-## 4.1 The hardware on which our software must execute
-
-- The processor (like CPU)  in the ATM device.
-- Time and date are supplied by a clock.
-- User input is provided through a keypad.
-- The screen of the ATM will show user the interface
-
-## 4.2 Defining the context 
-
-![context diagram](./UML/atmsystemcontext.jpg)
-
-For this system, User and Maintainer are dependent on the ATM for its services as they use its navigation information, operate it, and maintain it, respectively. On the other hand,  the power services of the ATM will be provided by an external system, the External Power actor. Meanwhile, the information of accounts of users are provided by bank system. So, the ATM system should communicate with it.
-
-## 4.3 Scenarios
-
-
-
-Now, let's walk through several scenarios of doing some operates on the ATM.
-
-1. First, a user should insert a cash card into the ATM. After it, the user should finish each step with 60 seconds. otherwise, the ATM will swallow the card.
-2. Second, the system will show a interface that let the user to enter the password. And there are three options: correction, confirm, Take the card. If the user find that he entered wrong password, then he can choose the correction option, and he can enter the password again. Then, he(she) should choose the confirm option, and the ATM system will communicate with the bank system as well as check whether the password entered is right. if it's not correct, it will show the wrong information and user should enter password again. However, if the user can just entered the wrong password three times, the card will be frozen. 
-3. After the user entered the right password, the interface will show some options(such changing password, Transfer money, Inquiry, withdrawal, deposit, take the card).
-4. If the user choose the option of changing password, then the system will ask the user to enter the original password. after the user entered the correct password, then the user can enter the new password to change the old password.
-5. If the user choose the option of Transfer money, then the system will first show some prompts. And after the user confirmed, then he(she) can enter the account that he(she) want to transfer money to. At last, he(she) should enter the amount of money he(she) want to transfer and confirm.
-6. If the user choose the option of Inquiry, then the system will show two options, the first one is detailed inquiry, the second one is balance inquiry. If the user choose the first one, then it will show the recent ten transactions details. If the user choose the second one, it will show balance of the account and the balance that can be used.
-7. If the user choose the option of withdrawal, it will show a interface that let the user to enter the amount of money he(she) want to withdraw. and after the user entered the number and confirmed, the  ATM will send the money to the user. However, if the amount entered by the user exceeds the balance in the card, then it show a message to tell the user. And then the user should enter a appropriate amount and confirm. At last, the system will show a show a successful transaction message(includes the amount of the transaction and the fee).
-8. If the user choose the option of deposit, then it open the cover, and show a message to let the user to put the money into the ATM. If there are no faults, then it will show some successful information to the user.
-9. If the user choose the option of take the card, then he can retrieve his(her) card and end the transaction.
 
 ## Functional requirement 4
 - Description :
@@ -318,7 +316,7 @@ ATM displays error message, Dialog :
 - Output : 
 Eject card.
 
-## 3.1.2 Requirements of the bank computer for the ATM
+## 4.1.2 Requirements of the bank computer for the ATM
 
 ### Authorization 
 The bank computer gets a request from the ATM to verify an account.
@@ -446,30 +444,30 @@ If the amount exceeds the limit, the transaction will fail.
 ## Functional requirement 10
 The bank only provides security for their own computer and their own software.
 
-## 3.2 External Interface Requirement
-### 3.2.1 User Interfaces
+## 4.2 External Interface Requirement
+### 4.2.1 User Interfaces
 
 The interface of the ATM must fulfill ergonomic requirements. The following is just an example for a possible interface to the ATM
 
 <img src="./ATM.PNG" alt="ATMInterface" title="ATM Interface"/>
 
-### 3.2.2 Hardware Interfaces
+### 4.2.2 Hardware Interfaces
 The ATM network has to provide hardware interfaces to: 
 - various printers
 - various ATM machines : <br>
 There are several companies producing the ATM machines.
 - several types of networks The exact specifcation of the hardware interfaces is not part of this document
 
-### 3.2.3 Software Interfaces
+### 4.2.3 Software Interfaces
 The ATM network has to provide software interfaces to: 
 - the software used by different banks
 - different network softwar <br>
 The exact, detailed specifcation of the software interfaces is not part of this document.
 
-### 3.2.4 Communication Interfaces
+### 4.2.4 Communication Interfaces
 There is no restriction of the ATM network to a specific network protocol as long as the performance requirements are satisfied.
 
-## 3.3 Performance Requirements
+## 4.3 Performance Requirements
 ### Performance requirement 1
 - Description <br>
 Error message should be displayed at least 30 sec.
@@ -486,20 +484,20 @@ The ATM dispenses money if and only if the withdrawal from the account is proces
 - Description <br>
 Each bank may be processing transactions from several ATMs at the same time.
 
-## 3.4 Attributes
-### 3.4.1 Availability
+## 4.4 Attributes
+### 4.4.1 Availability
 The ATM network has to be available 24 hours a day.
 
-### 3.4.2 Security
+### 4.4.2 Security
 The ATM network should provide maximal security. In order to make that much more transparent there are the following requirements <br>
 + It must be impossible to plug into the network
 
-### 3.4.3 Maintainability
+### 4.4.3 Maintainability
 Only maintainers are allowed to connect new ATM's to the network. (Maintainer)
 
-### 3.4.4 Transferability/Conversions
+### 4.4.4 Transferability/Conversions
 Not Applicable for now
 
-## 3.5 Other Requirements
-### 3.5.1 Data Base
+## 4.5 Other Requirements
+### 4.5.1 Data Base
 The ATM must be able to use several data formats according to the data formats that are provided by the data bases of different banks. A transaction should have all the properties of a data base transaction (Atomicity, Consistency, Isolation, Durability).
