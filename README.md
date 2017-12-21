@@ -316,6 +316,20 @@ ATM displays error message, Dialog :
 - Output : 
 Eject card.
 
+## Functional requirement 17
+- Description : <br>
+If customer want transfer money from one account to another account.
+
+- Input :
+Banck account number and amount want tranfer.
+
+
+- Processing : <br>
+verify the bank account and the amount
+
+- Output : 
+send transaction log to database and message to display
+
 ## 4.1.2 Requirements of the bank computer for the ATM
 
 ### Authorization 
