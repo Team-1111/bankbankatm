@@ -515,3 +515,5 @@ Not Applicable for now
 ## 4.5 Other Requirements
 ### 4.5.1 Data Base
 The ATM must be able to use several data formats according to the data formats that are provided by the data bases of different banks. A transaction should have all the properties of a data base transaction (Atomicity, Consistency, Isolation, Durability).
+### 4.5.2 Cash machine requirements
+In order to ensure the accuracy of the cash.The cash machine of ATM can accurately identify the denomination of cash. The machine must be inspected more than three times, regardless of withdrawing money or saving money. If the cash error, re-check three times, three consecutive incorrect cash will be returned to the user.
