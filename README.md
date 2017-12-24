@@ -17,13 +17,13 @@ This is our final group project of Object Oriented Programming and Analysis subj
 
 # PROBLEM STATEMENT
 
-When they came into being, ATMs were treated to be a boon for the general public. There was no need to stand in queues in banks to withdraw money,no need to go the branch for years even to get a cheque deposited, cashdeposited or for getting the cheque book issued.
+When they came into being, ATMs were treated to be a boon for the general public. There was no need to stand in queues in banks to withdraw money,no need to go the branch for years even to get a cheque deposited, cash deposited or for getting the cheque book issued.
 
 - When ATM were first developed there were only few ATM’s and people had to travel long distance to access ATM
-- People who were not familiar to the ATM machines they faced a lotof problems for accessing it.
-- There were many security issues faced before ATM was introducedand after its introduction some security issues were solved.
-- Some ATMs display the message “Your request cannot be processednow”, the meaning of which has to be interpreted by the customer only. It can mean that the ATM does not have sufficient funds, or thatyour account has some problem, or it may also mean that the server of the bank is not working
-- The servers of the banks working so slowly that it is difficult tounderstand if the problem is with the machine or the banks's server
+- People who were not familiar to the ATM machines they faced a lo tof problems for accessing it.
+- There were many security issues faced before ATM was introduced and after its introduction some security issues were solved.
+- Some ATMs display the message “Your request cannot be processed now”, the meaning of which has to be interpreted by the customer only. It can mean that the ATM does not have sufficient funds, or that your account has some problem, or it may also mean that the server of the bank is not working
+- The servers of the banks working so slowly that it is difficult to understand if the problem is with the machine or the banks's server
 
 # 1. Introduction
 Under indroduction we will explain the following areas. 
